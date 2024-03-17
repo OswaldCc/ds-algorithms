@@ -27,7 +27,12 @@ class LinkedList{
 			head=NULL;
 		}
 		void insertNode(int);
-		void printList();		
+		void printList();	
+		void insertFirst();
+		void deleteFirst();
+		void deleteLast();//can occur in constant time with a doubly linked list
+		void getLast();//can be done efficiently by by storing the tail, a pointer to the last node(data structure augmentation)
+		void insertLast();//can be done efficiently by by storing the tail, a pointer to the last node(data structure augmentation)
 		
 	
 };
