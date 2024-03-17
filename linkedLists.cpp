@@ -28,7 +28,7 @@ class LinkedList{
 		}
 		void insertNode(int);
 		void printList();	
-		void insertFirst();
+		void insertFirst(int);
 		void deleteFirst();
 		void deleteLast();//can occur in constant time with a doubly linked list
 		void getLast();//can be done efficiently by by storing the tail, a pointer to the last node(data structure augmentation)
@@ -45,7 +45,7 @@ void LinkedList::insertNode(int data){
 		head=newNode;
 		return;
 	}
-	Node* temp =head;// we want to start looping from here+-
+	Node* temp =head;// we want to start looping from here
 	
 
 	while(temp->next != NULL){//despite temp by itself just being a pointer, we have to explicitly say, temp->next cause if we just do temp we will also be referring to the data attribute of the temp variable 
@@ -66,12 +66,38 @@ void LinkedList::printList(){
 		temp=temp->next;//check out this line next time 
 	}
 }
+void LinkedList::insertFirst(int data){
+	Node* newNode=new Node(data);
+	if(head==NULL){
+		head=newNode;
+	}
+	else if(head!=NULL){
+		Node* firstItem=head;
+		newNode->next=firstItem;
+        head=newNode;
+	}
+}
+void LinkedList::deleteFirst(){
+	if(head==NULL){
+		cout<<"the list is empty bitch!";
+        return;
+	}
+	Node* firstItem=head;
+	head=firstItem->next;
+	delete firstItem;
+}
 
 int main(){
 	LinkedList list;
 	list.insertNode(1);
-    list.insertNode(2); 
-    list.insertNode(3); 
-    list.insertNode(4); 
-    list.printList();
+	list.insertNode(2);
+    list.insertNode(3);
+	list.insertNode(4);
+	list.insertNode(5);
+	list.insertNode(6);
+	list.insertNode(7);
+	list.insertNode(8);
+	list.insertFirst(0);
+	list.deleteFirst();
+	list.printList();
 }
