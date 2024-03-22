@@ -29,6 +29,7 @@ class LinkedList{
 		void insertNode(int);
 		void printList();	
 		void insertFirst(int);
+		void getFirst();
 		void deleteFirst();
 		void deleteLast();//can occur in constant time with a doubly linked list
 		void getLast();//can be done efficiently by by storing the tail, a pointer to the last node(data structure augmentation)
@@ -85,6 +86,15 @@ void LinkedList::deleteFirst(){
 	Node* firstItem=head;
 	head=firstItem->next;
 	delete firstItem;
+}
+void LinkedList::getFirst(){
+	if(head==NULL){
+		cout<<"the list is empty";
+		return;
+	}
+	Node* firstNode=head;
+	cout<<firstNode->data;
+	
 }
 
 int main(){
