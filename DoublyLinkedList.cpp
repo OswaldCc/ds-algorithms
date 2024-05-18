@@ -17,8 +17,7 @@ class Node{
 			this->data=data;
 			this->next=NULL;
 			this->prev=NULL;
-		}
-	
+		}	
 };
 
 class LinkedList{
@@ -36,10 +35,9 @@ class LinkedList{
 		void getLast();
 		void getAll();
 		void deleteFirst();
-		void deleteLast();
-		
-		
+		void deleteLast();		
 };
+
 void LinkedList::insertNode(int data){
 	Node* lastNode = new Node(data);
 	if(head==NULL){
@@ -52,6 +50,7 @@ void LinkedList::insertNode(int data){
 	lastNode->prev=initialLastNode;
 	tail=lastNode;	
 }
+
 void LinkedList::getAll(){
 	if(head==NULL){
 		cout<<"sorry bro, nothing to print";
@@ -63,10 +62,35 @@ void LinkedList::getAll(){
 		temp=temp->next;
 	}
 }
+void LinkedList::insertFirst(int data){
+	Node* newFirstNode = new Node(data);
+	if(head==NULL){
+		head=newFirstNode;
+		tail=newFirstNode;
+		return;
+	}
+	Node* initialFirstNode=head;
+	newFirstNode->next=initialFirstNode;
+	initialFirstNode->prev=newFirstNode;
+	head=newFirstNode;	
+}
+void LinkedList::getFirst(){
+	if(head==NULL){
+		cout<<"lol, nothing in this list";
+		return;
+	}
+	Node* firstNode=head;
+	cout<<firstNode->data<<" ";
+}
 int main(){
 	LinkedList list;
+	cout<<"All Nodes:"<<" ";
 	list.insertNode(2);
 	list.insertNode(3);
 	list.insertNode(4);
+	list.insertFirst(1);
 	list.getAll();
+	cout<<endl;
+	cout<<"First Node:"<<" ";
+	list.getFirst();
 }
