@@ -74,6 +74,7 @@ void LinkedList::insertFirst(int data){
 	initialFirstNode->prev=newFirstNode;
 	head=newFirstNode;	
 }
+
 void LinkedList::getFirst(){
 	if(head==NULL){
 		cout<<"lol, nothing in this list";
@@ -82,6 +83,16 @@ void LinkedList::getFirst(){
 	Node* firstNode=head;
 	cout<<firstNode->data<<" ";
 }
+
+void LinkedList::getLast(){
+	if(head==NULL){
+		cout<<"List is soooo empty what now?";
+		return;
+	}
+	Node* lastNode = tail;
+	cout<<lastNode->data<<" ";
+}
+
 int main(){
 	LinkedList list;
 	cout<<"All Nodes:"<<" ";
@@ -93,4 +104,7 @@ int main(){
 	cout<<endl;
 	cout<<"First Node:"<<" ";
 	list.getFirst();
+	cout<<endl;
+	cout<<"Last Node:"<<" ";
+	list.getLast();
 }
