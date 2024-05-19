@@ -93,6 +93,27 @@ void LinkedList::getLast(){
 	cout<<lastNode->data<<" ";
 }
 
+void LinkedList::deleteFirst(){
+	if(head==NULL){
+		cout<<"list is empty";
+		return;
+	}
+	Node* firstNode = head;
+	head=firstNode->next;
+	delete firstNode;
+}
+
+void  LinkedList::deleteLast(){
+	if(head==NULL){
+		cout<<"List is empty";
+		return;
+	}
+	Node* lastNode=tail;
+	tail= lastNode->prev;
+	tail->next=NULL;
+	delete lastNode;
+}
+
 int main(){
 	LinkedList list;
 	cout<<"All Nodes:"<<" ";
@@ -107,4 +128,16 @@ int main(){
 	cout<<endl;
 	cout<<"Last Node:"<<" ";
 	list.getLast();
+	cout<<endl;
+	cout<<"Deleting first ...";
+	cout<<endl;
+	list.deleteFirst();
+	cout<<"New list:"<<" ";
+	list.getAll();
+	cout<<endl;	
+	cout<<"Deleting Last ...";
+	cout<<endl;
+	list.deleteLast();
+	cout<<"New List:"<<" ";
+	list.getAll();
 }
