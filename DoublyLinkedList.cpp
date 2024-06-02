@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-/* in a doubly linked list, delete last will happen in constant time*/
+/* in a doubly linked list, delete last will happen in constant time as we have access to the prev node 
+which we set to the new tail after deletion.*/
 class Node{
 	public:
 		int data;
