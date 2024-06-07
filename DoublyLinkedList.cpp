@@ -22,14 +22,15 @@ class Node{
 };
 
 class LinkedList{
-	public:
+	private:
 		Node* head;
 		Node* tail;
 		
-		LinkedList(){
+    public:
+        LinkedList(){
 			head=NULL;
 			tail=NULL;
-		}
+        }
 		void insertNode(int);//equivalent to insertLast
 		void insertFirst(int);
 		void getFirst();
