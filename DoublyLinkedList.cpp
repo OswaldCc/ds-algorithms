@@ -37,7 +37,8 @@ class LinkedList{
 		void getLast();
 		void getAll();
 		void deleteFirst();
-		void deleteLast();		
+		void deleteLast();	
+		void reverse();	
 };
 
 void LinkedList::insertNode(int data){
@@ -116,6 +117,14 @@ void  LinkedList::deleteLast(){
 	delete lastNode;
 }
 
+void LinkedList::reverse(){
+	if(head==NULL){
+		cout<<"Empty list";
+		return;
+	}
+	Node* temp=head;
+	while()
+}
 int main(){
 	LinkedList list;
 	cout<<"All Nodes:"<<" ";
