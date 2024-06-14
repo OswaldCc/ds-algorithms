@@ -117,14 +117,6 @@ void  LinkedList::deleteLast(){
 	delete lastNode;
 }
 
-void LinkedList::reverse(){
-	if(head==NULL){
-		cout<<"Empty list";
-		return;
-	}
-	Node* temp=head;
-	while()
-}
 int main(){
 	LinkedList list;
 	cout<<"All Nodes:"<<" ";
