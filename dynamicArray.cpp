@@ -18,7 +18,7 @@ class DynamicArray{
 			current_capacity=new_capacity;
 		}
     public:
-    	DynamicArray(size_t initial_capacity=4){
+    	DynamicArray(size_t initial_capacity=1){
 			data=new int[initial_capacity];
 			current_size=0;
 			current_capacity=initial_capacity;	
@@ -26,7 +26,7 @@ class DynamicArray{
 		~DynamicArray(){
 			delete[] data;
 		}
-		size_t size() const{
+		size_t size() const{//const here is a qualifier 
 			return current_size;
 		}
 		size_t capacity() const{
@@ -36,4 +36,6 @@ class DynamicArray{
 
 int main(){
 	DynamicArray arr;
+	cout<<arr.size()<<endl;
+	cout<<arr.capacity();
 }
