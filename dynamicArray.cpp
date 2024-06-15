@@ -32,10 +32,17 @@ class DynamicArray{
 		size_t capacity() const{
 			return current_capacity;
 		}
+		void insertLast(int value){
+			if(current_size == current_capacity){
+				resize(current_size * 2);			
+			}
+			data[current_size++] = value;
+		}
 };
 
 int main(){
 	DynamicArray arr;
+	arr.insertLast(10);
 	cout<<arr.size()<<endl;
 	cout<<arr.capacity();
 }
