@@ -38,6 +38,9 @@ class DynamicArray{
 			}
 			data[current_size++] = value;
 		}
+		int& operator[](size_t index){
+			
+		}
 };
 
 int main(){
