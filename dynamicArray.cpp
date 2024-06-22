@@ -39,13 +39,22 @@ class DynamicArray{
 			data[current_size++] = value;
 		}
 		int& operator[](size_t index){
-			
+			if(index >= current_size){
+				throw out_of_range("Index out of range");
+			}
+			return data[index];
 		}
 };
 
 int main(){
-	DynamicArray arr;
-	arr.insertLast(10);
-	cout<<arr.size()<<endl;
-	cout<<arr.capacity();
+	try{
+		DynamicArray arr;
+    	arr.insertLast(10);
+	    cout<<arr[5]<<endl;
+    	cout<<arr.size()<<endl;
+	    cout<<arr.capacity();	
+	} catch(const out_of_range& e){
+		cerr<<"Exception caught"<<" "<<e.what()<<endl;
+	}
+	return 0;
 }
