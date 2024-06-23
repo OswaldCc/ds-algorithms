@@ -33,10 +33,16 @@ class DynamicArray{
 			return current_capacity;
 		}
 		void insertLast(int value){
-			if(current_size == current_capacity){
+			if (current_size == current_capacity){
 				resize(current_size * 2);			
 			}
 			data[current_size++] = value;
+		}
+		void deleteLast(){
+			if (current_size == 0){
+				throw out_of_range("No items");
+			}
+			--current_size;
 		}
 		int& operator[](size_t index){
 			if(index >= current_size){
@@ -56,9 +62,15 @@ int main(){
 	try{
 		DynamicArray arr;
     	arr.insertLast(10);
-	    cout<<arr[5]<<endl;
-    	cout<<arr.size()<<endl;
-	    cout<<arr.capacity();	
+    	arr.insertLast(20);
+    	arr.insertLast(30);
+    	arr.insertLast(40);
+	    cout<<arr[2]<<endl;
+    	cout<<"Current size: "<<arr.size()<<endl;
+	    cout<<"Current capacity: "<<arr.capacity()<<endl;
+		arr.deleteLast();
+		cout<<"size after delete: "<<arr.size()<<endl;
+		cout<<"capacity after delete: "<<arr.capacity()<<endl;	
 	} catch(const out_of_range& e){
 		cerr<<"Exception caught"<<" "<<e.what()<<endl;
 	}
