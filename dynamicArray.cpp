@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdexcept>
 using namespace std;
-
+// todo: add delete at
+//make a constant time data structure 
 class DynamicArray{
 	private:
 		int* data;
