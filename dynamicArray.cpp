@@ -44,6 +44,12 @@ class DynamicArray{
 			}
 			return data[index];
 		}
+		const int& operator[](size_t index) const{
+			if(index >= current_size){
+				throw out_of_range("Indexx out of range");
+				return data[index];
+		}
+		}
 };
 
 int main(){
