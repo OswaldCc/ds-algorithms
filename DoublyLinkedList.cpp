@@ -40,7 +40,7 @@ class LinkedList{
 		void deleteLast();	
 		void reverse();	
 };
-
+//implement get at, set at, insert at delete at
 void LinkedList::insertNode(int data){
 	Node* lastNode = new Node(data);
 	if(head==NULL){
